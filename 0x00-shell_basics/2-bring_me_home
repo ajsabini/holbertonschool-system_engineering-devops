@@ -1,3 +1,4 @@
 #!/bin/bash
-cd root
+cd /holberton-system_engineering-devops
+
 
