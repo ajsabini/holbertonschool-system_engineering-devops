@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# display a text n times with a for
+
+for _ in {1..10}
+do
+  echo "Best School"
+done
