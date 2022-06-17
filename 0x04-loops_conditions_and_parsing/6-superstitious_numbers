@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# display a text n times with a while, and in after 9 impression print hii
+
+i=1
+while [ $i -le 20 ]
+do	
+	case $i in
+		4)
+			echo -n $i
+			echo -e "\nbad luck from China"
+			;;
+
+		9)
+			echo -n $i
+			echo -e "\nbad luck from Japan"
+			;;
+
+		17)
+			echo -n $i
+			echo -e "\nbad luck from Italy"
+			;;
+
+		*)
+			echo -e $i
+			;;
+	esac
+
+
+	i=$(( i + 1 ))
+done
