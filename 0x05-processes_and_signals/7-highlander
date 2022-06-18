@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#display a text infinity w/2sleep, and other text when recievs a SIGTER
+
+function control_c
+{
+	echo "I am invincible!!!"
+}
+trap control_c SIGTERM
+while :
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
