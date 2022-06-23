@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#TCP and UDP ports, display and listenings
+netstat -vlp
+
