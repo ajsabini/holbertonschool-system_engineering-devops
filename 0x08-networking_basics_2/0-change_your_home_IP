@@ -2,7 +2,7 @@
 #configure Ubuntu server with same requirements
 
 cp /etc/hosts -/hosts.new
-sed -i 's/127.0.0.[0-9]/127.0.0.2/g' -/hosts.new
-echo "8.8.8.8	facebbok.com" >> -/hosts.new
+sed -i '/localhost/s/127.0.0.[1-9]/127.0.0.2/' -/hosts.new
+echo -e "\n8.8.8.8f\tfacebbok.com" >> -/hosts.new
 cp -f -/hosts.new /etc/hosts
 
