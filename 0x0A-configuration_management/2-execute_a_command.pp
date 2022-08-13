@@ -1,6 +1,4 @@
-# kill proess
-exec { 'killmenow':
-  command  => '',
-  provider => 'shell',
-  returns  => [0, 1],
+# kill proessi
+exec { 'pkill -f killmenow':
+  path => '/usr/bin/:/usr/local/bin:/bin'
 }
