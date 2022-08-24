@@ -10,5 +10,5 @@ sudo sed -i '/server_name _;/a rewrite ^/redirect_me https://https://www.youtube
 sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom.html
 sudo sed -i '/server_name _;/a error_page 400 /custom.html;' /etc/nginx/sites-available/default
 var=$(cat /proc/sys/kernel/hostname)
-sudo sed -i '/http {/a add_header X-Served-By '"${var}"';' /etc/nginx/nginx.conf
+sudo sed -i '/http {/a add_header X-Served-By '"{var}"';' /etc/nginx/nginx.conf
 sudo /etc/init.d/nginx start
