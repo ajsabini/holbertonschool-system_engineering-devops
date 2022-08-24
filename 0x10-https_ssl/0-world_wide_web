@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# script that display subdomains info
+
+the_func () {
+	ip=$(dig "$subdomain"."$domain" | awk '/ANSWER SECTION/{getline;print $5;}')
+	register=$(dig "$subdomain"."$domain" | awk '/ANSWER SECTION/{getline;print $4;}')
+}
+
+if [ -z "$2" ]
+then
+	the_func "$1" "www"
+	echo "The subdomain www is a $register record and points to $ip"
+	the_func "$1" "lb-01"
+	echo "The subdomain lb-01 is a $register record and points to $ip"
+	the_func "$1" "web-01"
+	echo "The subdomain web-01 is a $register record and points to $ip"
+	the_func "$1" "web-02"
+	echo "The subdomain web-02 is a $register record and points to $ip"
+else
+	the_func "$1" "$2"
+	echo "The subdomain $2 is a $register record and points to $ip"
+fi
+
+
