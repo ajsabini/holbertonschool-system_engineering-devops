@@ -2,8 +2,8 @@
 # script that display subdomains info
 
 the_func () {
-	ip=$(dig "$subdomain"."$domain" | awk '/ANSWER SECTION/{getline;print $5;}')
-	register=$(dig "$subdomain"."$domain" | awk '/ANSWER SECTION/{getline;print $4;}')
+	ip=$(dig "$2"."$1" | awk '/ANSWER SECTION/{getline;print $5;}')
+	register=$(dig "$2"."$1" | awk '/ANSWER SECTION/{getline;print $4;}')
 }
 
 if [ -z "$2" ]
