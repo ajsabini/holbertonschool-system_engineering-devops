@@ -11,15 +11,15 @@ if __name__ == "__main__":
             iu = argv[1]
             response = requests.get(
                     'https://jsonplaceholder.typicode.com/users/{}'.format(
-                        idUsuario))
+                        iu))
             if response.status_code == 200:
                 no = response.json().get('name')
                 urlTs = 'https://jsonplaceholder.typicode.com/todos?userId={}'
-                response_todos = requests.get(urlTs.format(idUsuario))
+                response_todos = requests.get(urlTs.format(iu))
                 tasks = len(response_todos.json())
                 todos = response_todos.json()
 
-                with open("{}".format(idUsuario) + ".csv", "w") as file:
+                with open("{}".format(iu) + ".csv", "w") as file:
                     writing = csv.writer(file, dialect='unix')
                     for tk in todos:
                         writing.writerow(
