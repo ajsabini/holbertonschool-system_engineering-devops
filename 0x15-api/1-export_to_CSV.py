@@ -19,8 +19,8 @@ if __name__ == "__main__":
                 tasks = len(response_todos.json())
                 todos = response_todos.json()
 
-                with open("{}".format(iu) + ".csv", "w") as file:
-                    writing = csv.writer(file, dialect='unix')
+                with open("{}".format(iu) + ".csv", "w", newline='') as f:
+                    writing = csv.writer(f, dialect='unix')
                     for tk in todos:
                         writing.writerow(
                                 [iu, no, tk.get('completed'), tk.get('title')]
