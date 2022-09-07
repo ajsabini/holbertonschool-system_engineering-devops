@@ -22,7 +22,7 @@ if __name__ == "__main__":
                 for task in todos:
                     if task.get('completed') is True:
                         completas += 1
-                print("Employee {} is done with tasks({}/{})".
+                print("Employee {} is done with tasks({}/{}):".
                       format(nombre, completas, tasks))
                 for compl in todos:
                     if compl.get('completed') is True:
