@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     for user in respUsers:
         unames[user.get('id')] = user.get('username')
-        
+
     for task in respTodos:
         if task.get('userId') not in objs:
             objs[task.get('userId')] = []
