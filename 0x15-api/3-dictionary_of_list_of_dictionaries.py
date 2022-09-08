@@ -6,24 +6,23 @@ import requests
 if __name__ == "__main__":
 
     respUsers = requests.get(
-            'https://jsonplaceholder.typicode.com/todos/').json()
+            'https://jsonplaceholder.typicode.com/users').json()
     respTodos = requests.get(
-            'https://jsonplaceholder.typicode.com/todos/'
-            ).json()
+            'https://jsonplaceholder.typicode.com/todos').json()
 
     objs = {}
     unames = {}
 
     for user in respUsers:
-        unames[user.get('id')] = user.get('username')
+        unames[str(user.get('id'))] = user.get('username')
 
     for task in respTodos:
-        if task.get('userId') not in objs:
-            objs[task.get('userId')] = []
-        objs[task.get('userId')].append({
+        if str(task.get('userId')) not in objs:
+            objs[str(task.get('userId'))] = []
+        objs[str(task.get('userId'))].append({
+                'username': unames.get(str(task.get('userId'))),
                 'task': task.get('title'),
-                'completed': task.get('completed'),
-                'username': unames.get(task.get('userId'))
+                'completed': task.get('completed')
             })
 
     with open('todo_all_employees.json', "w", newline='') as f:
