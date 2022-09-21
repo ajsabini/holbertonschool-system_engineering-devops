@@ -1,5 +1,5 @@
 #!usr/bin/python3
-"""task 0"""
+"""obtain num suscriber for reddit"""
 import requests
 
 
