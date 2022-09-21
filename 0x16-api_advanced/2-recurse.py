@@ -19,7 +19,7 @@ def recurse(subreddit, hot_list=[], after="inicio"):
 	hotTitles = data.get("data", {}).get("children", [])
 
 	if not hotTitles:
-		return hot_list
+		return None
 
 	for ht in hotTitles:
 		hot_list.append(ht["data"]["title"])
