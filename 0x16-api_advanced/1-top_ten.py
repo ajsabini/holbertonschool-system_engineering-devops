@@ -12,7 +12,7 @@ def top_ten(subreddit):
 
     subs_hot = requests.get(url, headers=headers, allow_redirects=False)
 
-    if subs_hot.status_code == 200:
+    if subs_hot.status_code < 300:
         data = subs_hot.json()
         hot_posts = data["data"]["children"]
         for post in hot_posts[:10]:
