@@ -13,7 +13,7 @@ def number_of_subscribers(subreddit):
                 Safari/537.36"}
     subs_count = requests.get(url, headers=headers, allow_redirects=False)
 
-    if subs_count.status_code == 200:
+    if subs_count.status_code < 300:
         return subs_count.json()["data"]["subscribers"]
     else:
         return 0
