@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """obtain num suscriber for reddit"""
 import requests
 
