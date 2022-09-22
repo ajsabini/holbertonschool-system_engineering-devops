@@ -4,10 +4,12 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after="inicio"):
-	""" returns the number of subscribers (not active users, total subscribers) for a given subreddit  """
-	
-	url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-	headersUA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"}
+	""" returns the number of subscribers (not active users,
+    total subscribers) for a given subreddit  """
+
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    headersUA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
+    AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"}
 
 	if after != "inicio":
 		url = url + "?after={}".format(after)
