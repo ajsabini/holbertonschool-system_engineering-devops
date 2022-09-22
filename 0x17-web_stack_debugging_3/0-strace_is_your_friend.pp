@@ -7,4 +7,3 @@ exec {'apache restart':
   command  => '/etc/init.d/apache2 restart',  
   provider => shell,
 }
-
