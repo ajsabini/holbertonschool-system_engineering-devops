@@ -1,9 +1,5 @@
-#setting nginx without systemctl
+#setting nginx 
 exec {'replace value':
-    command  => "sed -i 's/-n 15/-n 4096/g' /etc/default/nginx",
-    provider => shell,
-}
-exec {'restart nginx':
-    command  => '/etc/init.d/nginx restart',
+    command  => "sed -i 's/-n 15/-n 4096/g' /etc/default/nginx && sudo service nginx restart",
     provider => shell,
 }
