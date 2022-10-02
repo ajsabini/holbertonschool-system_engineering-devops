@@ -9,7 +9,7 @@
     - root cause
         updating php version
 
-#Timeline
+# Timeline
    
     the issue was detected at 08/14/2022 14:54 for the administrator ofthe website, 
     and a few minutes later several users complained about the failure. First action
@@ -17,7 +17,7 @@
     support team and open a ticket with the hosting provider. Finally we foud the
     origin of issue, the php version was updated, and the sql queries was deprecated
 
-##Root cause and resolution
+## Root cause and resolution
   
     Pulling the thread we found that the developer team install a new php library for
     convert html to pdf, and one of the requeriments was the php version must be
@@ -27,7 +27,7 @@
     To fix the problem we had to rewrite all database queries with the new php 
     implementation.
 
-##Corrective and preventative measures
+## Corrective and preventative measures
 
     To prevent this from happening again, the development team must be extremely 
     attentive to the fact that any update of any component of the server can generate 
